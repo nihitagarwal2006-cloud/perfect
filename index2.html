@@ -187,7 +187,6 @@ document.body.appendChild(h);
 <audio id="music" loop>
 <source src="sajna.mp3">
 </audio>
-<audio id="song" src="sajna.mp3" loop></audio>
 
 <div class="fireworks">🎆 🎇 🎆 🎇 🎆 🎇</div>
 
@@ -237,7 +236,11 @@ setTimeout(type,40);
 }
 function start(){
 document.getElementById("entry").style.display="none";
-document.getElementById("music").play();
+
+var audio = document.getElementById("music");
+audio.volume = 1;
+audio.play().catch(()=>{});
+
 type();
 }
 
@@ -266,3 +269,4 @@ setTimeout(()=>{forever.style.opacity=1;},4200);
 
 </body>
 </html>
+
