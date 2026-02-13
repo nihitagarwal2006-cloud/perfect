@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bachaaaa ❤️</title>
+
+<style>
+body{
+margin:0;
+background:black;
+font-family:'Segoe UI',sans-serif;
+text-align:center;
+color:white;
+overflow-x:hidden;
+}
+
+/* NETFLIX INTRO */
+#netflix{
+position:fixed;width:100%;height:100vh;background:black;
+display:flex;justify-content:center;align-items:center;
+z-index:20;flex-direction:column;
+}
+.netflix-text{
+font-size:70px;font-weight:bold;color:red;letter-spacing:8px;
+animation:zoom 3s forwards;
+}
+@keyframes zoom{
+0%{transform:scale(5);opacity:0;}
+40%{opacity:1;}
+100%{transform:scale(1);}
+}
+
+/* STARS */
+.stars{
+position:fixed;width:100%;height:100%;
+background:black;
+z-index:-3;
+}
+.stars::after{
+content:"";
+position:absolute;width:2px;height:2px;background:white;
+box-shadow:50px 80px white,120px 200px white,300px 50px white,
+500px 300px white,700px 100px white,900px 250px white,
+1100px 60px white,1300px 170px white;
+animation:twinkle 3s infinite alternate;
+}
+@keyframes twinkle{from{opacity:0.3;}to{opacity:1;}}
+
+/* ROSES */
+.rose{
+position:fixed;top:-50px;font-size:24px;
+animation:fall linear infinite;z-index:-1;
+}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg);}}
+
+/* ENTRY */
+#entry{
+display:none;position:fixed;width:100%;height:100vh;background:black;
+justify-content:center;align-items:center;flex-direction:column;z-index:10;
+}
+
+button{
+padding:15px 35px;font-size:18px;border:none;border-radius:40px;
+background:#ff2e7a;color:white;box-shadow:0 0 15px pink;margin:10px;
+}
+
+/* FIREWORKS */
+.fireworks{position:fixed;top:0;width:100%;font-size:24px;animation:fire 1s infinite alternate;}
+@keyframes fire{from{letter-spacing:5px;}to{letter-spacing:20px;}}
+
+/* HEARTS BG */
+.floating-heart{
+position:fixed;
+font-size:18px;
+animation:floatUp linear infinite;
+z-index:-1;
+}
+@keyframes floatUp{
+from{transform:translateY(100vh);opacity:1;}
+to{transform:translateY(-10vh);opacity:0;}
+}
+
+/* ROMANTIC GALLERY */
+.gallery{
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+
+.photo{
+position:relative;
+margin:25px 0;
+}
+
+.photo img{
+width:92%;
+border-radius:25px;
+box-shadow:0 0 25px pink,0 0 60px #ff2e7a;
+animation:zoomPic 8s infinite alternate;
+filter:brightness(1.1) saturate(1.2);
+}
+
+@keyframes zoomPic{
+from{transform:scale(1);}
+to{transform:scale(1.06);}
+}
+
+/* glowing border */
+.photo::before{
+content:"";
+position:absolute;
+top:-5px;left:-5px;right:-5px;bottom:-5px;
+border-radius:30px;
+background:linear-gradient(45deg,#ff2e7a,#ff9ed2,#ff2e7a);
+z-index:-1;
+filter:blur(20px);
+opacity:0.7;
+}
+
+/* PROPOSAL SCENE */
+#scene{display:none;margin-top:40px;position:relative;height:240px;}
+.person{font-size:90px;position:absolute;bottom:0;}
+#boy{left:5%;transition:2s;}
+#girl{right:5%;}
+
+#ring{
+font-size:45px;position:absolute;bottom:90px;left:20%;
+opacity:0;transition:1.5s;filter:drop-shadow(0 0 10px gold);
+}
+
+.glow{animation:glow 1s infinite alternate;}
+@keyframes glow{from{filter:drop-shadow(0 0 5px gold);}to{filter:drop-shadow(0 0 25px gold);}}
+
+/* FINAL */
+#forever{
+opacity:0;font-size:34px;margin-top:20px;transition:2s;
+color:#ff2e7a;font-weight:bold;
+text-shadow:0 0 20px pink;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- ROSES -->
+
+<script>
+for(let i=0;i<25;i++){
+let r=document.createElement("div");
+r.className="rose";
+r.innerHTML="🌹";
+r.style.left=Math.random()*100+"vw";
+r.style.animationDuration=(5+Math.random()*5)+"s";
+document.body.appendChild(r);
+}
+
+/* floating hearts */
+for(let i=0;i<20;i++){
+let h=document.createElement("div");
+h.className="floating-heart";
+h.innerHTML="💖";
+h.style.left=Math.random()*100+"vw";
+h.style.animationDuration=(6+Math.random()*6)+"s";
+document.body.appendChild(h);
+}
+</script>
+
+<!-- NETFLIX -->
+
+<div id="netflix">
+<div class="netflix-text">MANNuuu ❤️</div>
+<p>presents</p>
+</div>
+
+<div class="stars"></div>
+
+<!-- ENTRY -->
+
+<div id="entry">
+<h1>Hey Bachaaaa ❤️</h1>
+<button onclick="start()">Enter Our Love Story 💘</button>
+</div>
+
+<audio id="music" loop>
+<source src="sajna.mp3">
+</audio>
+<audio id="song" src="sajna.mp3" loop></audio>
+
+<div class="fireworks">🎆 🎇 🎆 🎇 🎆 🎇</div>
+
+<h1>For My Bachaaaa 💖</h1>
+<p id="text"></p>
+
+<h2>Our Romantic Memories ✨</h2>
+
+<div class="gallery">
+<div class="photo"><img src="p1.jpg"></div>
+<div class="photo"><img src="p2.jpg"></div>
+<div class="photo"><img src="p3.jpg"></div>
+<div class="photo"><img src="p4.jpg"></div>
+<div class="photo"><img src="p5.jpg"></div>
+<div class="photo"><img src="p6.jpg"></div>
+<div class="photo"><img src="p7.jpg"></div>
+<div class="photo"><img src="p8.jpg"></div>
+<div class="photo"><img src="p9.jpg"></div>
+<div class="photo"><img src="p10.jpg"></div>
+<div class="photo"><img src="p11.jpg"></div>
+</div>
+
+<button onclick="proposal()">Tap for surprise 💍</button>
+
+<div id="scene">
+<div id="boy" class="person">🤵</div>
+<div id="girl" class="person">👰</div>
+<div id="ring">💍</div>
+</div>
+
+<h2 id="forever">✨ Mrs Agarwal 💍❤️ ✨</h2>
+
+<script>
+setTimeout(()=>{
+document.getElementById("netflix").style.display="none";
+document.getElementById("entry").style.display="flex";
+},3500);
+
+let msg="From strangers to everything ❤️. You are my happiness, my peace, my home. Every moment with you is my favorite memory. Bachaaaa… will you marry me? 💍";
+let i=0;
+function type(){
+if(i<msg.length){
+document.getElementById("text").innerHTML+=msg.charAt(i);
+i++;
+setTimeout(type,40);
+}
+}
+function start(){
+document.getElementById("entry").style.display="none";
+document.getElementById("music").play();
+type();
+}
+
+function proposal(){
+let ans=confirm("Will you marry me Bachaaaa? 💍🥺");
+if(ans){startAnimation();}
+else{alert("No option 😌 You are already mine forever ❤️");}
+}
+
+function startAnimation(){
+let scene=document.getElementById("scene");
+let boy=document.getElementById("boy");
+let ring=document.getElementById("ring");
+let forever=document.getElementById("forever");
+
+scene.style.display="block";
+setTimeout(()=>{boy.style.left="40%";},200);
+setTimeout(()=>{
+ring.style.opacity=1;
+ring.style.left="60%";
+ring.classList.add("glow");
+},2300);
+setTimeout(()=>{forever.style.opacity=1;},4200);
+}
+</script>
+
+</body>
+</html>
